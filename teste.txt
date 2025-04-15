@@ -1,1 +1,48 @@
-ola do merge t
+Comandos Principais do Git
+1. Configuração Inicial
+git init: Inicializa um novo repositório Git no diretório atual.
+git config --global user.name "Seu Nome": Define o nome do usuário para os commits.
+git config --global user.email "seu.email@exemplo.com": Define o e-mail do usuário.
+git config --list: Mostra as configurações do Git.
+2. Criando e Gerenciando Repositórios
+git clone <url>: Copia um repositório remoto para o seu computador (ex.: git clone https://github.com/usuario/repo.git).
+git status: Mostra o estado atual do repositório (arquivos modificados, staged, etc.).
+git add <arquivo>: Adiciona um arquivo específico à staging area.
+git add .: Adiciona todos os arquivos modificados à staging area.
+git commit -m "Mensagem descritiva": Cria um commit com as alterações na staging area.
+git commit -am "Mensagem": Combina git add . e git commit (só para arquivos já rastreados).
+
+3. Visualizando o Histórico
+git log: Mostra o histórico de commits.
+git log --oneline: Mostra o histórico de commits em uma linha por commit.
+git diff: Mostra as diferenças entre as alterações não commitadas e o último commit.
+git diff <commit1> <commit2>: Compara as diferenças entre dois commits.
+
+4. Trabalhando com Branches
+git branch: Lista todas as branches locais.
+git branch <nome>: Cria uma nova branch chamada <nome>.
+git checkout <nome>: Muda para a branch <nome>.
+git checkout -b <nome>: Cria e muda para a branch <nome> ao mesmo tempo.
+git merge <nome>: Mescla a branch <nome> na branch atual.
+git branch -d <nome>: Deleta a branch <nome> (se já foi mesclada).
+
+5. Trabalhando com Repositórios Remotos
+git remote add origin <url>: Conecta o repositório local a um remoto (ex.: GitHub).
+git push origin <branch>: Envia os commits da branch local para o repositório remoto.
+git pull origin <branch>: Puxa as alterações do repositório remoto para a branch local.
+git fetch origin: Baixa as alterações do remoto sem mesclá-las.
+git remote -v: Lista os repositórios remotos conectados.
+
+6. Desfazendo Alterações
+git restore <arquivo>: Descarta alterações não commitadas em um arquivo.
+git restore --staged <arquivo>: Remove um arquivo da staging area.
+git reset --hard <commit>: Volta o repositório para um commit específico, descartando alterações posteriores.
+git revert <commit>: Cria um novo commit que desfaz as alterações de um commit específico.
+git stash: Salva alterações não commitadas temporariamente.
+git stash pop: Restaura as alterações salvas com git stash.
+
+7. Outros Comandos Úteis
+git clean -fd: Remove arquivos não rastreados do diretório.
+git blame <arquivo>: Mostra quem modificou cada linha de um arquivo.
+git tag <nome>: Cria uma tag para marcar um commit (ex.: para versões de software).
+git rebase <branch>: Reorganiza commits aplicando-os sobre outra branch (usado para históricos mais limpos).
